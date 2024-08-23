@@ -23,13 +23,6 @@ export class DeliveryAppComponent implements OnInit {
       .map((data: any[]) => data.reduce((acc: any, value: any) => ({ ...acc, ...value }), {}));
   }
 
-  //  parser({table}){
-  //   return table.rows
-  //     .map((row: { c: { [x: string]: { v: any; }; }; }) => [ ...table.cols.map((col: { label: any; }, index: string | number) => ({[col.label]: row.c[index].v,}))])
-  //     .map((data: any[]) => data.reduce((acc: any, value: any) =>  ({...acc, ...value}), {}))
-  // }
-
-
   addQuant(item: any) {
     const itemfound = this.sabores.find(s => s.id == item.id)
     itemfound.quant++
@@ -52,10 +45,10 @@ export class DeliveryAppComponent implements OnInit {
 
     let total = 0;
 
-    this.sabores.forEach(sabor => {
-      if (sabor.quant > 0) {
-        mensagem += `${sabor.quant}${espaco}-${espaco}${sabor.name}${quebralinha}`;
-        total += sabor.quant * 3;
+    this.sabores.forEach(item => {
+      if (item.quant > 0) {
+        mensagem += `${item.quant}${espaco}-${espaco}${item.nome}${quebralinha}`;
+        total += item.valor * item.quant;
       }
     });
 
