@@ -1,0 +1,25 @@
+<div class="d-flex flex-column justify-content-center align-items-center">
+  <mat-card class="w-50 mt-3">
+    <mat-card-content>
+        <div class="d-flex align-items-center">
+          <div class="col-sm-2">
+            <img src="https://scontent.fsdu2-2.fna.fbcdn.net/v/t39.30808-1/275371724_651065269449911_3510763435172769350_n.png?stp=dst-png_s200x200&_nc_cat=108&ccb=1-7&_nc_sid=f4b9fd&_nc_ohc=7MSeq6B1q9MQ7kNvgF9d_b6&_nc_ht=scontent.fsdu2-2.fna&oh=00_AYAp7AW_lHWrPqJMHjOcHv2QdO-tHwvCy0aKsV1llgpu2A&oe=66CD5955" alt="Imagem selecionada" class="img-perfil" />
+          </div>
+          <p class="fs-3 m-0 p-0" style="color: rgb(34, 34, 253); font-weight: 500;">DiskAjellso</p>
+        </div>
+    </mat-card-content>
+  </mat-card>
+
+  <div class="w-50">
+    <mat-card class="w-100 h-100vh">
+      <mat-card *ngFor="let item of sabores">
+        <div>
+          <p>{{item}}</p>
+
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add-circle"></mat-icon>
+
+        </div>
+      </mat-card>
+    </mat-card>
+  </div>
+</div>
