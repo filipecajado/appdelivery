@@ -1,25 +1,42 @@
 <div class="d-flex flex-column justify-content-center align-items-center">
-  <mat-card class="w-50 mt-3">
+  <mat-card class="col-8" style="max-width: 950px;">
     <mat-card-content>
-        <div class="d-flex align-items-center">
-          <div class="col-sm-2">
-            <img src="https://scontent.fsdu2-2.fna.fbcdn.net/v/t39.30808-1/275371724_651065269449911_3510763435172769350_n.png?stp=dst-png_s200x200&_nc_cat=108&ccb=1-7&_nc_sid=f4b9fd&_nc_ohc=7MSeq6B1q9MQ7kNvgF9d_b6&_nc_ht=scontent.fsdu2-2.fna&oh=00_AYAp7AW_lHWrPqJMHjOcHv2QdO-tHwvCy0aKsV1llgpu2A&oe=66CD5955" alt="Imagem selecionada" class="img-perfil" />
-          </div>
-          <p class="fs-3 m-0 p-0" style="color: rgb(34, 34, 253); font-weight: 500;">DiskAjellso</p>
+      <div class="d-flex align-items-center">
+        <div class="">
+          <img
+            src="https://scontent.fsdu2-2.fna.fbcdn.net/v/t39.30808-1/275371724_651065269449911_3510763435172769350_n.png?stp=dst-png_s200x200&_nc_cat=108&ccb=1-7&_nc_sid=f4b9fd&_nc_ohc=7MSeq6B1q9MQ7kNvgF9d_b6&_nc_ht=scontent.fsdu2-2.fna&oh=00_AYAp7AW_lHWrPqJMHjOcHv2QdO-tHwvCy0aKsV1llgpu2A&oe=66CD5955"
+            alt="Imagem selecionada" class="img-perfil" />
         </div>
+        <div class="px-2">
+          <p class="fs-3 m-0 p-0" style="color: rgb(40, 40, 216); font-weight: 500;">DiskAjellso</p>
+        </div>
+      </div>
     </mat-card-content>
   </mat-card>
 
-  <div class="w-50">
-    <mat-card class="w-100 h-100vh">
-      <mat-card *ngFor="let item of sabores">
-        <div>
-          <p>{{item}}</p>
+  <div class="col-8 my-3" style="max-width: 950px;">
+    <mat-card class="p-2">
+      <mat-card *ngFor="let item of sabores" class="mt-2" style="height: 40px;">
 
-            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add-circle"></mat-icon>
+        <div class="d-flex align-items-center justify-content-between mx-4">
+          <p class="m-0" style="font-size: 16px;">{{item.nome}}</p>
 
+          <div class="d-flex align-items-center">
+            <button mat-mini-fab class="btn-item" (click)="removeQuant(item)">
+              <mat-icon>remove_circle</mat-icon>
+            </button>
+            <p class="mx-2 my-0" style="font-size: 16px;">{{item.quant}}</p>
+            <button mat-mini-fab class="btn-item" (click)="addQuant(item)">
+              <mat-icon>add_circle</mat-icon>
+            </button>
+          </div>
         </div>
       </mat-card>
     </mat-card>
+
+    <div class="d-flex justify-content-center mt-3">
+
+      <button mat-flat-button class="bg-primary" style="color: white" (click)="enviar()">Enviar Pedido</button>
+    </div>
   </div>
 </div>
